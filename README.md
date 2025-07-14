@@ -81,5 +81,4 @@ CSRF protection, rate limiting, CORS filters
 Use Azure Application Insights for:
 API monitoring
 User behavior analytics
-
 Error tracing (stack traces, exception maps)
