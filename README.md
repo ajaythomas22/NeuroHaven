@@ -82,3 +82,105 @@ Use Azure Application Insights for:
 API monitoring
 User behavior analytics
 Error tracing (stack traces, exception maps)
+
+
+
+Modules Overview
+1. 👤 User Authentication & Profile
+Signup/Login (Email, Google)
+Profile creation (basic info, mental health preferences, goals)
+Role-based access (Users, Therapists, Admins)
+
+2. 📅 Mood Tracker & Journaling
+Daily mood input (scale + emojis + optional journal)
+Weekly/monthly visualization (charts)
+Suggested exercises based on mood trends
+
+3. 🧘 Mindfulness Exercises
+Guided meditation (audio/video)
+Breathing exercises (animation)
+Affirmations (daily push/notifications)
+
+4. 📚 Resource Library
+Blogs, articles, videos on mental health topics
+Filter by category (Anxiety, Stress, Depression, etc.)
+Admin dashboard to manage resources
+
+5. 💬 Community Forum
+Public discussion threads
+Anonymous posting option
+Moderation tools for Admins
+
+6. 📞 Counselor Booking System
+Search verified therapists
+View availability and book sessions
+Video call integration (e.g., WebRTC, Zoom API)
+
+7. 🔔 Notifications & Reminders
+Mood tracking reminders
+Appointment alerts
+New content or community replies
+
+8. 🛠️ Admin Dashboard
+Manage users, therapists, content, and reports
+Analytics and KPIs
+Moderation & flagging system
+
+🗃️ Database Schema Overview (Example for MongoDB)
+Users Collection
+{
+  userId,
+  name,
+  email,
+  passwordHash,
+  role, // "user", "therapist", "admin"
+  preferences,
+  createdAt,
+  updatedAt
+}
+Moods Collection
+{
+  userId,
+  date,
+  moodLevel,
+  moodNotes,
+  tags
+}
+Appointments Collection
+{
+  therapistId,
+  userId,
+  timeslot,
+  status // "booked", "completed", "cancelled"
+}
+
+🚧 Development Phases
+Phase 1: MVP (4–6 Weeks)
+User auth
+Mood tracker
+Mindfulness page
+Resource blog
+Basic UI with responsive design
+
+Phase 2: Community & Counseling (4–6 Weeks)
+Forum with moderation
+Booking system for therapists
+Notifications
+
+Phase 3: Scale & Enhance (4–8 Weeks)
+Video chat integration
+AI-based mood suggestions
+Admin analytics & reporting
+Mobile app (React Native / Flutter optional)
+
+✅ Non-Functional Requirements
+Responsive and mobile-friendly UI
+Secure user data (HIPAA-compliant practices if possible)
+Scalable microservice architecture (if using Spring Boot/Docker)
+Automated testing (Jest, Postman, JUnit, etc.)
+Accessibility (WAI-ARIA guidelines)
+
+💡 Future Enhancements
+AI chatbot for immediate support
+Gamification (badges, streaks)
+Integration with wearable devices (e.g., Fitbit, Apple Health)
